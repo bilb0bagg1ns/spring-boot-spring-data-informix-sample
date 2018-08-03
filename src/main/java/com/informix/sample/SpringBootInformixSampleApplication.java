@@ -1,6 +1,7 @@
 package com.informix.sample;
 
 import javax.inject.Inject;
+import org.springframework.transaction.annotation.Transactional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,10 +23,17 @@ public class SpringBootInformixSampleApplication implements CommandLineRunner {
 		SpringApplication.run(SpringBootInformixSampleApplication.class, args);
 	}
 
+	@Transactional(readOnly = true)
 	@Override
 	public void run(String... strings) throws Exception {
 		log.info("------Querying Informix Table");
 		informixRepositoryService.retrieve();
+		
+
+		informixRepositoryService.retrieveByEntityId(19981215793l);
+
+		
+		
 	}
 
 }

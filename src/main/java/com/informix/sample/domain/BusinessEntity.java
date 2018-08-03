@@ -1,10 +1,24 @@
 package com.informix.sample.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity(name="entity")
 public class BusinessEntity {
 
+	@Id
 	long entityId;
+	@Column(name="entity_nm")
 	String entityName;
+	@Column(name="entity_typ")
 	String entityType;
+
+	
+	
+	public BusinessEntity() {
+
+	}
 
 	public BusinessEntity(long entityId, String entityName, String entityType) {
 		super();
@@ -28,6 +42,8 @@ public class BusinessEntity {
 	public void setEntityName(String entityName) {
 		this.entityName = entityName;
 	}
+
+
 
 	public String getEntityType() {
 		return entityType;
