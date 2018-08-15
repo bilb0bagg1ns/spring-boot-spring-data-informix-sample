@@ -19,7 +19,7 @@ public interface BusinessEntityRepository extends CrudRepository<BusinessEntity,
 
 	List<BusinessEntity> findByEntityName(String entityName);
 
-	@Query("SELECT e FROM BusinessEntity e WHERE e.entityName LIKE :entityName ORDER BY e.entityId ASC")
+	@Query("SELECT e FROM BusinessEntity e WHERE e.entityName LIKE %:entityName% ORDER BY e.entityId ASC")
 	Stream<BusinessEntity> findByPartialEntityName(@Param("entityName") String entityName);
 
 	// custom query example and return a stream

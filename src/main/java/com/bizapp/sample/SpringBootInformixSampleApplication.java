@@ -36,7 +36,7 @@ public class SpringBootInformixSampleApplication implements CommandLineRunner {
 		log.info("------Querying Informix Table");
 
 		System.out.println("\n1.findByPartialEntityName()...");
-		Stream<BusinessEntity> stream1 = businessEntityRepositoryService.findByPartialEntityName("Homer%");
+		Stream<BusinessEntity> stream1 = businessEntityRepositoryService.findByPartialEntityName("Homer");
 		stream1.forEach(x -> System.out.println(x));
 
 		System.out.println("\n2.findByEntityName(String entityName)...");
